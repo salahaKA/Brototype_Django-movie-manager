@@ -1,0 +1,13 @@
+{% for student_obj in students%}
+
+<h1>Name: {{student_obj.name | upper}}</h1>
+<p>Gender: {{student_obj.gender | lower}}</p>
+<h4>Year: {{student_obj.year| default:' No data found'}}</h4>
+
+{% if sucess %}
+<p> Detailes was a sucess at that time</p>
+{% else %}
+<p> Detailes weren't success at that time</p>
+{% endif %}
+<h4>---------------------------------</h4>
+{% endfor %}

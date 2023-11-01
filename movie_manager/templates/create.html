@@ -1,0 +1,23 @@
+
+{% extends 'blank_layout.html' %}
+<!-- {% include 'menu.html' %} -->
+
+{% block content %}
+<h1>This is Create page</h1>
+
+<ul>
+    <li><a href="{% url 'c' %}">CREATE PAGE</a></li>
+    <li><a href="{% url 'l' %}">LIST PAGE</a></li>
+    <li><a href="{% url 'e' %}">EDIT PAGE</a></li>
+</ul>
+
+
+<form class="mt-5" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ frm.as_p }}
+    <button type="submit" style="background-color: aqua;">CREATE</button>
+
+  </form>
+
+{% endblock content %}
+

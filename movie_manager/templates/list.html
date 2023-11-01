@@ -1,0 +1,20 @@
+
+{% include 'menu.html' %}
+{% load static %}
+<h1 style="color: brown;"><b>This is Movies List page</b></h1>
+<table border="5" style="background-color: black; color: white;">
+<tr><th>Movie Name</th><th>Origin</th><th>Year</th><th>Poster</th></tr>
+{% for movie_obj in movies%}
+<tr>
+    <td><h6>{{movie_obj.name | upper}}</h6></td>
+    <td><p>{{movie_obj.origin | lower}}</p></td>
+    <td><h6>{{movie_obj.year| default:' No data found'}}</h6></td>
+    <td>
+        <!-- {{movie_obj.name |upper }} -->
+        {% if movie_obj.poster %}
+        <img src="{{ movie_obj.poster.url}}" width="100" height="150" alt="Movie Poster"></img>
+        {% endif %}
+    </td>
+</tr>
+{% endfor %}
+</table>
